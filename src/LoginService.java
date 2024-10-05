@@ -1,3 +1,7 @@
+/**
+ * 该类用于实现登录服务
+ * */
+
 import javax.swing.*;
 
 public class LoginService {

@@ -1,12 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 
-import com.formdev.flatlaf.IntelliJTheme;
 import com.formdev.flatlaf.FlatIntelliJLaf;
 
+
 // 这里是程序的入口
-
-
 public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
@@ -18,9 +16,11 @@ public class Main {
             frame.setResizable(false);
             frame.setTitle("活力调频服务器登录系统");
 
+//            设置Icon
             Image ico = new ImageIcon("img\\mainIcon.png").getImage();
             frame.setIconImage(ico);
 
+//            设置主题
             try {
                 UIManager.setLookAndFeel(new FlatIntelliJLaf());
             } catch (Exception e) {

@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.util.Arrays;
 
 public class index {
     private JTextField IPAddress;
@@ -11,6 +10,8 @@ public class index {
     private JButton ResetButton;
     private JPanel mainPanel;
     private JLabel Notification;
+    private JProgressBar Progress;
+    private JCheckBox Memory;
 
 
     public index() {
@@ -36,7 +37,10 @@ public class index {
 
         });
 
-        ResetButton.addActionListener(e -> System.out.println("重置设置"));
+        ResetButton.addActionListener(e -> {
+            ResetService resetService = new ResetService();
+            System.out.println("重置");
+        });
     }
 
     public JPanel getMainPanel() {
