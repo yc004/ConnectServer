@@ -12,7 +12,6 @@ public class logger {
         if (!util.folderExists("data")) {
 //            创建文件夹
             util.createFolder("data");
-            log("folder created");
         }
     }
 
@@ -24,12 +23,11 @@ public class logger {
 
 
         System.out.println(msg);
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("data/log.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("data/log.log", true))) {
             writer.write(fommattedtime
                     + "\n-------------------------------------\n"
                     + msg
-                    + "\n-------------------------------------\n");
-            System.out.println("log success");
+                    + "\n-------------------------------------\n\n");
         } catch (IOException e) {
             e.printStackTrace();
         }

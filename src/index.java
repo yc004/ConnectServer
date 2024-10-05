@@ -4,9 +4,9 @@ import java.util.Arrays;
 public class index {
     private JTextField IPAddress;
     private JTextField Port;
-    private JTextField folder;
-    private JTextField username;
-    private JPasswordField password;
+    private JTextField Folder;
+    private JTextField Username;
+    private JPasswordField Password;
     private JButton LoginButton;
     private JButton ResetButton;
     private JPanel mainPanel;
@@ -14,18 +14,26 @@ public class index {
 
     public index() {
         LoginButton.addActionListener(e -> {
-            String msg = "IP地址：" + IPAddress.getText()
-                    + "\n端口号：" + Port.getText()
-                    + "\n共享文件夹：" + folder.getText()
-                    + "\n用户名：" + username.getText()
-                    + "\n密码：" + Arrays.toString(password.getPassword());
-            logger logger = new logger();
-            logger.log(msg);
+            String ip = IPAddress.getText();
+            String port = Port.getText();
+            String folder = Folder.getText();
+            String username = Username.getText();
+            String password = String.valueOf(Password.getPassword());
+            LoginService loginService = new LoginService();
+
+//            发起登录请求
+            try {
+                if (loginService.login(ip, port, folder, username, password)) {
+
+                }
+            } catch (IllegalStateException exception) {
+                System.out.println(exception.getMessage());
+            }
+
+
         });
 
-        ResetButton.addActionListener(e -> {
-            System.out.println("重置设置");
-        });
+        ResetButton.addActionListener(e -> System.out.println("重置设置"));
     }
 
     public JPanel getMainPanel() {
