@@ -10,6 +10,7 @@ public class index {
     private JButton LoginButton;
     private JButton ResetButton;
     private JPanel mainPanel;
+    private JLabel Notification;
 
 
     public index() {
@@ -23,10 +24,12 @@ public class index {
 
 //            发起登录请求
             try {
-                if (loginService.login(ip, port, folder, username, password)) {
-
+                if (loginService.login(ip, port, folder, username, password, Notification)) {
+                    Notification.setText("登录成功");
+                    System.out.println("Login Successful");
                 }
             } catch (IllegalStateException exception) {
+                Notification.setText("信息填写不全");
                 System.out.println(exception.getMessage());
             }
 

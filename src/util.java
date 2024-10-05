@@ -6,11 +6,13 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 public class util {
+//    检查指定文件夹是否存在
     public static boolean folderExists(String path) {
         File folder = new File(path);
         return folder.exists();
     }
 
+//    创建文件夹
     public static void createFolder(String folder) {
         File directory = new File(folder);
         try {
@@ -26,10 +28,12 @@ public class util {
         }
     }
 
+//    检查字符串是否为空
     public static boolean stringEmpty(String string) {
         return string != null && string.isEmpty();
     }
 
+//    运行控制台指令
     public static int runCommand(String... command) {
         ProcessBuilder processBuilder = new ProcessBuilder(command);
         processBuilder.redirectErrorStream(true);

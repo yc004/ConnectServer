@@ -1,9 +1,10 @@
 import javax.swing.*;
 
+// 这里是程序的入口
+
 
 public class Main {
     public static void main(String[] args) {
-//        首先将控制台初始化为utf-8编码
         SwingUtilities.invokeLater(() -> {
 //            基本设置
             JFrame frame = new JFrame();
