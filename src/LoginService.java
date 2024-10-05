@@ -23,8 +23,8 @@ public class LoginService {
 
 
 //        指定端口映射（需要管理员权限）
-        int proxyExitCode = util.runCommand("runas", "/user:Administrator", "cmd", "/c", "chcp", "65001", "&&", "netsh",
-                "interface", "portproxy", "add", "v4tov4",
+        int proxyExitCode = util.runCommand("runas", "/user:Administrator", "\"cmd", "/c", "chcp", "65001", "&&", "netsh",
+                "interface", "portproxy", "add", "v4tov4\"",
                 "listenaddress=127.0.0.1", "listenport=445", "connectaddress=" + ip, "connectport=" + port);
         if (proxyExitCode == 0) {
             label.setText("端口映射成功");
